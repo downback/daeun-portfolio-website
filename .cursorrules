@@ -1,0 +1,152 @@
+1. Package Management
+
+Use npm for all package installation and management.
+
+Do not use yarn or pnpm.
+
+Keep dependencies minimal and prefer official packages from the chosen stack.
+
+2. JavaScript & Code Style
+
+Use JavaScript (JS or JSX), not TypeScript.
+
+Keep the code simple, direct, and readable.
+
+Use camelCase for variables and functions.
+
+Use PascalCase only for React components.
+
+Keep functions small and focused on a single responsibility.
+
+Avoid unnecessary abstractions or overengineering.
+
+Prefer direct iteration over code duplication.
+
+3. React Rules
+
+Use functional components only.
+
+Use the "function" keyword for component declarations.
+
+Follow the Rules of Hooks:
+
+Only call hooks at the top level of a component or custom hook.
+
+Only call hooks from React function components or custom hooks.
+
+Extract reusable logic into custom hooks when it improves clarity.
+
+Avoid inline functions inside render when they clearly harm readability; otherwise keep things simple.
+
+Prefer composition over inheritance.
+
+Use children and render props patterns when appropriate.
+
+Use refs sparingly (only when accessing DOM directly).
+
+Prefer controlled components for forms.
+
+4. Next.js App Router Rules
+
+Use the App Router (app/ directory).
+
+Use server components by default.
+
+Only use client components when interactivity is required.
+
+Organize pages, layouts, components, and API routes cleanly and consistently.
+
+All environment variables must use .env.local and process.env.
+
+Never expose Supabase service-role keys to the client.
+
+Use next/image for all images.
+
+5. Tailwind CSS Rules
+
+Use Tailwind utility classes for styling.
+
+Keep classnames readable; extract reusable UI elements into components when needed.
+
+Use shadcn’s cn() helper if included in the project.
+
+Do not create additional CSS files unless needed for global resets or special overrides.
+
+Avoid deep or overly complex class strings.
+
+6. shadcn/ui Rules
+
+Use shadcn/ui components as the foundation for interactive UI elements.
+
+Follow shadcn’s recommended structure when adding or modifying components.
+
+Customize components through composition and props rather than duplication.
+
+Maintain consistent folder naming and placement of UI components.
+
+7. Supabase Rules
+
+Use Supabase client in server components or API routes for secure operations.
+
+Never expose service-role or admin keys to the client.
+
+For client components, initialize Supabase with the public anon key only.
+
+All admin actions (create, update, delete content) must go through:
+
+Supabase RLS, or
+
+server-side functions
+
+Validate user inputs before sending them to Supabase.
+
+Use Supabase Storage or a dedicated upload API for image uploads.
+
+8. Vercel Deployment Rules
+
+Ensure all environment variables are set correctly in Vercel.
+
+Assume serverless execution; do not rely on persistent local state.
+
+Keep API routes stateless.
+
+Prefer static or server-rendered pages for public portfolio content.
+
+9. Project Features
+   Public Portfolio Pages
+
+Includes: landing, works, CV, contact.
+
+Optimize for speed and SEO.
+
+Use next/image for images.
+
+Prefer server-rendered or static pages where possible.
+
+Configure metadata properly for SEO.
+
+Admin Editor
+
+Admin pages must be client components.
+
+Use shadcn UI for forms, dialogs, modals, and inputs.
+
+Admin can add, edit, delete text and images.
+
+Validate input before updating Supabase.
+
+Provide clear success/error feedback.
+
+Use Supabase Storage or upload API for image handling.
+
+10. Cursor Behavior Rules
+
+Follow these project-specific rules first; follow global rules when not in conflict.
+
+Do not invent APIs, patterns, or features.
+
+Stick to JavaScript, React, Next.js App Router, Tailwind CSS, shadcn/ui, Supabase, and Vercel patterns.
+
+Ask for clarification if a requirement is ambiguous.
+
+Keep code simple, maintainable, and aligned with the project’s structure.
