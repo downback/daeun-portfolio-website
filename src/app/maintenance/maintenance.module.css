@@ -1,0 +1,19 @@
+@keyframes wrenchSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-45deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animateWrenchSwing {
+  animation: wrenchSwing 1.2s ease-in-out infinite;
+  display: inline-block;
+}
